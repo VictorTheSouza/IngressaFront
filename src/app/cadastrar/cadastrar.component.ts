@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -27,7 +28,8 @@ export class CadastrarComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -256,11 +258,11 @@ export class CadastrarComponent implements OnInit {
     this.usuario.usuarioEmpregador = this.tipoDeUsuario
 
     if (this.usuario.usuarioEmpregador == null) {
-      alert('Escolha uma das opções')
+      this.alertas.showAlertDanger('Escolha uma das opções')
     }
 
     if (this.usuario.senha != this.validacaoSenha) {
-      alert('Senhas diferentes')
+      this.alertas.showAlertDanger('Senhas diferentes')
 
 
     }
@@ -282,11 +284,11 @@ export class CadastrarComponent implements OnInit {
 
         this.router.navigate(['/entrar'])
 
-        alert('Usuario cadastrado com sucesso')
+        this.alertas.showAlertSuccess('Usuario cadastrado com sucesso')
 
       }, erro => {
         if (erro.status == 400 || erro.status == 500) {
-          alert('Informações inválidas')
+          this.alertas.showAlertDanger('Informações inválidas')
         }
       })
     }
