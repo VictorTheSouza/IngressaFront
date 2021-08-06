@@ -78,7 +78,7 @@
                     style="width:300px; height: 200px; overflow: hidden;"
                     *ngFor='let item of listaPostagensAreaCargo | orderBy: key : reverse'>
 
-                    <div class="mx-4 my-3 d-flex align-items-center">
+                    <div class="p-1 d-flex align-items-center">
                         <div>
                             <img src="{{item.usuario.fotoPerfil}}" class="me-2 card-img-top img-fluid rounded-circle"
                                 alt="..." style="width: 50px;">
@@ -90,26 +90,14 @@
                         </div>
                     </div>
 
-                    <div class="card-body">
+                    <div class="p-1">
                         <h5 class="card-title"><b>{{item.titulo}}</b></h5>
                         <h6>Cargo: {{item.cargo}}</h6>
                         <h6>Região: {{item.regiao}}</h6>
                         <p class="card-text my-3" [innerHTML]="item.texto"></p>
-
                         <a data-bs-toggle="modal" data-bs-target="#postagemPesquisada" (click)="redEditPost(item.id)"
                             (click)="findPostagemId()" class="bet_time"><span>Ver vaga
                             completa</span></a>
-                    </div>
-
-
-                    <div class="d-flex justify-content-around mb-2">
-
-                        <!--    <button class="btn btn-outline-success">{{item.qtCurtidas}} Gostei
-                                </button>
-                                <button class="btn btn-outline-secondary">Comentar</button>
-                                <button class="btn btn-outline-primary">Compartilhar</button>
-                            </div> -->
-
                     </div>
 
                 </div>
@@ -129,7 +117,7 @@
                     style="width:300px; height: 200px; overflow: hidden;"
                     *ngFor='let item of listaPostagensRegiao | orderBy: key : reverse'>
 
-                    <div class="mx-4 my-3 d-flex align-items-center">
+                    <div class="p-1 d-flex align-items-center">
                         <div>
                             <img src="{{item.usuario.fotoPerfil}}" class="me-2 card-img-top img-fluid rounded-circle"
                                 alt="..." style="width: 50px;">
@@ -141,12 +129,11 @@
                         </div>
                     </div>
 
-                    <div class="card-body">
+                    <div class="p-1">
                         <h5 class="card-title"><b>{{item.titulo}}</b></h5>
                         <h6>Cargo: {{item.cargo}}</h6>
                         <h6>Região: {{item.regiao}}</h6>
                         <p class="card-text my-3" [innerHTML]="item.texto"></p>
-
                         <a data-bs-toggle="modal" data-bs-target="#postagemPesquisada" (click)="redEditPost(item.id)"
                             (click)="findPostagemId()" class="bet_time"><span>Ver vaga
                             completa</span></a>
@@ -169,7 +156,7 @@
                             style="width:300px; height: 200px; overflow: hidden;"
                             *ngFor='let item of listaPostagensAreaCargoERegiao | orderBy: key : reverse'>
         
-                            <div class="mx-4 my-3 d-flex align-items-center">
+                            <div class="p-1 d-flex align-items-center">
                                 <div>
                                     <img src="{{item.usuario.fotoPerfil}}" class="me-2 card-img-top img-fluid rounded-circle"
                                         alt="..." style="width: 50px;">
@@ -181,15 +168,14 @@
                                 </div>
                             </div>
         
-                            <div class="card-body">
+                            <div class="p-1">
                                 <h5 class="card-title"><b>{{item.titulo}}</b></h5>
                                 <h6>Cargo: {{item.cargo}}</h6>
                                 <h6>Região: {{item.regiao}}</h6>
                                 <p class="card-text my-3" [innerHTML]="item.texto"></p>
-        
                                 <a data-bs-toggle="modal" data-bs-target="#postagemPesquisada" (click)="redEditPost(item.id)"
-                                (click)="findPostagemId()" class="bet_time"><span>Ver vaga
-                                completa</span></a>
+                                    (click)="findPostagemId()" class="bet_time"><span>Ver vaga
+                                    completa</span></a>
                             </div>
         
                         </div>
